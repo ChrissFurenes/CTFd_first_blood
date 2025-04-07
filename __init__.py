@@ -146,18 +146,15 @@ class FirstBloodValueChallenge(BaseChallenge):
     
     @classmethod
     def _gen_award_data(cls, challenge, solve, solve_num):
-        award_points = challenge.first_blood_bonus[solve_num - 1] if (solve_num - 1) < len(challenge.first_blood_bonus) else None
-        if award_points is None:
-            return None
 
         return {
             'user_id': solve.user.id if solve.user is not None else None,
             'team_id': solve.team.id if solve.team is not None else None,
             'name': '{0} blood for {1}'.format(ordinalize(solve_num), challenge.name),
-            'description': 'Bonus points for being the {0} to solve the challenge'.format(ordinalize(solve_num)),
+            'description': 'Vinner av perie',
             'category': 'First Blood',
             'date': solve.date,
-            'value': award_points,
+            ##'value': award_points,
             'icon': 'medal-{0}'.format(ordinalize(solve_num)) if solve_num <= 3 else 'medal',
             'solve_id': solve.id,
             'solve_num': solve_num,
