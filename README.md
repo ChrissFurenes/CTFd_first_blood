@@ -1,4 +1,8 @@
 # CTFd First Blood
+## This is to use for adding First blood challange type in predefined yml file and work on first start
+
+Sadly it dont work ;(
+
 A small CTFd plugin to give First Blood points.
 
 This plugin adds a new challenge type that grants additional points to first N people who solve it.
